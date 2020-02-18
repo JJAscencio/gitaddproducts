@@ -1,0 +1,60 @@
+<header>
+      <div class="col s12">
+        <h1 class="center-align">CashTracking</h1>
+      </div>
+</header>
+
+
+<main>
+
+  <div class="col s12">
+    <h1 class="center-align" >{{Total | currency: $}}</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input #cashInput placeholder="$0.00" id="money" type="number">
+            <label class="active" for="money"></label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col 6">
+        <a class="waves-effect waves-light btn-large income" (click)="addIncome(cashInput)"><i class="material-icons left"></i>Income</a>
+      </div>
+
+      <div class="col 6">
+        <a class="waves-effect waves-light btn-large expense" (click)="addExpense(cashInput)"><i class="material-icons right"></i>Expense</a>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <h4>Transactions</h4>
+            </li>
+            <li class="collection-item" *ngFor="let money of expenses">
+              <div>
+                <a href="#!" class="secondary-content">
+                  <i class="material-icons trending_up"></i>
+                </a>
+              </div>
+              {{money | currency:$}}</li>
+
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+
+</footer>
